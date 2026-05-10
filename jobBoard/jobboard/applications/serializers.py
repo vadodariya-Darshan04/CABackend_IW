@@ -60,7 +60,6 @@ class ApplicationListSerializer(serializers.ModelSerializer):
             'status', 'status_display', 'expected_salary', 'applied_at', 'updated_at'
         ]
 
-
 class UpdateApplicationStatusSerializer(serializers.Serializer):
     STATUS_CHOICES = [
         ('pending', 'Pending'),

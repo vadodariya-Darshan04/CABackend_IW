@@ -25,10 +25,8 @@ class JobApplication(models.Model):
 
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
 
-    # Employer notes (not visible to candidate)
     employer_notes = models.TextField(blank=True)
 
-    # Timestamps
     applied_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

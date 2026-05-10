@@ -30,7 +30,6 @@ def create_notification(recipient_email, notif_type, title, message, application
     )
 
 
-# ---------- Candidate: Apply for a job ----------
 
 class ApplyForJobView(generics.CreateAPIView):
     serializer_class = JobApplicationSerializer
@@ -205,7 +204,7 @@ class UpdateApplicationStatusView(APIView):
             application.employer_notes = employer_notes
         application.save()
 
-        # Record history
+        
         ApplicationStatusHistory.objects.create(
             application=application,
             old_status=old_status,
@@ -246,7 +245,6 @@ class UpdateApplicationStatusView(APIView):
         })
 
 
-# ---------- Notifications ----------
 
 class MyNotificationsView(generics.ListAPIView):
     serializer_class = NotificationSerializer
@@ -272,7 +270,6 @@ class MarkAllNotificationsReadView(APIView):
         return Response({'message': f'{count} notifications marked as read.'})
 
 
-# ---------- Reporting & Stats ----------
 
 class EmployerDashboardView(APIView):
     """Employer: overall stats dashboard."""
